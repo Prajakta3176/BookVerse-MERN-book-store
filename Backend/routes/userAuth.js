@@ -12,7 +12,7 @@ const authenticateToken = (req,res,next)=>{
         if(err){
             return res.status(403).json({message : "Token expired. Please signin again"});
         }
-        console.log("Decoded User: ", user);
+        // console.log("Decoded User: ", user);
         req.user = user;
         next();
     });

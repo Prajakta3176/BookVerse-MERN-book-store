@@ -7,7 +7,7 @@ export default function RecentlyAddedBooks() {
     useEffect(()=>{
         const fetch = async()=>{
            const res =  await axios.get('http://localhost:8080/get-recent-books');
-            console.log(res.data);
+            // console.log(res.data);
             setBooks(res.data);
         }
         fetch();

@@ -9,9 +9,11 @@ const authSlice = createSlice({
         },
         logout : (state)=>{
             state.isLoggedIn = false;
+            state.role = "";
+            localStorage.clear();
         },
-        changeRole : (state)=>{
-            const role = action.payload;
+        changeRole : (state,action)=>{
+            const {role} = action.payload;
             state.role = role;
         }
     }

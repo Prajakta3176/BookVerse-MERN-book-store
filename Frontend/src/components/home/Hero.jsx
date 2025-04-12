@@ -4,7 +4,6 @@ import hero from '../../assets/png2.png'
 
 export default function Hero() {
   return (
-    // h-[85vh] sm:h-[100vh]
     <div className='h-[85vh] flex flex-col-reverse justify-center  gap-3 md:gap-5 text-center md:text-start md:flex-row md:justify-around sm:justify-center sm:py-20 md:py-0'>
         <div className='w-full lg:w-3/6 flex flex-col items-center lg:items-start justify-center px-5 md:py-5'>
         <h1 className='text-4xl md:text-6xl font-semibold text-yellow-100'>Discover Your Next Read</h1>
@@ -18,5 +17,4 @@ export default function Hero() {
         </div>
     </div>
   )
-  // h-[80vh] sm:h-[100vh] md:h-[75vh] sm:py-20
 }

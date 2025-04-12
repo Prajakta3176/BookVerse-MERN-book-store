@@ -20,9 +20,9 @@ export const placeOrder = async (req, res) => {
       });
       //clearing cart
       await User.findByIdAndUpdate(id, { $pull: { cart: orderData._id } });
-
-      res.status(200).json({ message: "Order placed successfully" });
     }
+
+    res.status(200).json({ message: "Order placed successfully" });
   } catch (err) {
     res.status(500).json({ message: "Internal server error" });
   }

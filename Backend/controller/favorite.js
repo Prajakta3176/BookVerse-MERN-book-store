@@ -7,7 +7,8 @@ export const addBookInFavorites = async (req, res) => {
     const userData = await User.findById(id);
     const isBookAlreadyFav = userData.favorites.includes(bookid);
     if (isBookAlreadyFav) {
-      return res.status(200).json({ message: "Book is already in favorites" });
+      await User.findByIdAndUpdate(id, { $pull: { favorites: bookid } });
+      return res.status(200).json({ message: "Book removed from favorites" });
     }
     await User.findByIdAndUpdate(id, { $push: { favorites: bookid } });
     res.status(200).json({ message: "Book added in favorites" });

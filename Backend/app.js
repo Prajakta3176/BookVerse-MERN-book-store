@@ -20,7 +20,8 @@ import orderRouter from "./routes/order.js";
 // middleware
 server.use(cors());
 server.use(express.json());
-server.use(express.static("/assets"));
+server.use('/assets', express.static('assets'));
+
 
 //routes
 server.use("/", userRouter);

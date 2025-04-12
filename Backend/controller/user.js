@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 
 export const signup = async (req, res) => {
   try {
-    const { username, email, password, address ,role} = req.body;
+    const { username, email, password, address, role } = req.body;
 
     //check username length is more than 4
     if (username.length < 4) {
@@ -36,7 +36,7 @@ export const signup = async (req, res) => {
       email: email,
       password: hashPass,
       address: address,
-      role : role || 'user'
+      role: role || "user",
     });
 
     await newUser.save();
@@ -106,7 +106,7 @@ export const updateAddress = async (req, res) => {
       res.status(404).json({ message: "User not found" });
     }
 
-    res.status(200).json({message : "Address updated successfully"});
+    res.status(200).json({ message: "Address updated successfully" });
   } catch (err) {
     res.status(500).json({ message: "Internal server error" });
   }
